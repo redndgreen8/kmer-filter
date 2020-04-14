@@ -1,0 +1,58 @@
+{ 
+		"segdups" : "/home/cmb-16/mjc/soyeon/grch38_ctrlRegion_chr1.bed",
+		"tandem" : "/home/cmb-16/mjc/shared/references/hg38/regions/tandem_repeats.bed",
+		"ref" : "/home/cmb-16/mjc/shared/references/hg38/",
+		"k" : 22,
+		"pb-cov" : 20,
+		"samples" : { 
+				"HG00514-h0" : { "VCF": "/home/cmb-16/mjc/mchaisso/projects/SVGenotyping/alignments/HG00514.h0.contigs.fasta.vcf",
+												 "ASM" : "/home/cmb-16/mjc/mchaisso/projects/IlluminaPolished/HG00514.h0.contigs.fasta",
+												 "PB": "/home/cmb-16/mjc/projects/hgsvg/alignments/HG00514/HG00514.PB.bam",
+												 "JF": "/home/cmb-16/mjc/hgsvg/datasets/HG00514/Illumina/mer_counts.q0.L4.jf",
+												 "ILL" : ["/home/cmb-16/mjc/hgsvg/datasets/HG00514/Illumina/ERR899717_1.fastq.gz",
+                                  "/home/cmb-16/mjc/hgsvg/datasets/HG00514/Illumina/ERR899717_2.fastq.gz"]
+										},
+				"HG00514-h1" : { "VCF": "/home/cmb-16/mjc/mchaisso/projects/SVGenotyping/alignments/HG00514.h1.contigs.fasta.vcf",
+												 "ASM" : "/home/cmb-16/mjc/mchaisso/projects/IlluminaPolished/HG00514.h1.contigs.fasta",
+												 "PB": "/home/cmb-16/mjc/projects/hgsvg/alignments/HG00512/HG00512.PB.bam",
+												 "JF": "/home/cmb-16/mjc/hgsvg/datasets/HG00514/Illumina/mer_counts.q0.L4.jf",
+												 "ILL" : ["/home/cmb-16/mjc/hgsvg/datasets/HG00514/Illumina/ERR899717_1.fastq.gz",
+																	"/home/cmb-16/mjc/hgsvg/datasets/HG00514/Illumina/ERR899717_2.fastq.gz"]
+										},
+				"HG00733-h0" : {  "VCF": "/home/cmb-16/mjc/mchaisso/projects/SVGenotyping/alignments/HG00733.h0.contigs.fasta.vcf",
+												 "ASM" : "/home/cmb-16/mjc/mchaisso/projects/IlluminaPolished/HG00733.h0.contigs.fasta",
+													"PB": "/home/cmb-16/mjc/projects/hgsvg/alignments/HG00733/HG00733.PB.bam",
+													"JF": "/home/cmb-16/mjc/hgsvg/datasets/HG00733/Illumina/mer_counts.q0.L4.jf",
+													"ILL" : ["/home/cmb-16/mjc/hgsvg/datasets/HG00733/Illumina/ERR903031_1.fastq.gz",
+																	 "/home/cmb-16/mjc/hgsvg/datasets/HG00733/Illumina/ERR903031_2.fastq.gz"]
+                    },
+				"HG00733-h1" : { "VCF": "/home/cmb-16/mjc/mchaisso/projects/SVGenotyping/alignments/HG00733.h1.contigs.fasta.vcf",
+												 "PB": "/home/cmb-16/mjc/projects/hgsvg/alignments/HG00733/HG00733.PB.bam",
+												 "ASM" : "/home/cmb-16/mjc/mchaisso/projects/IlluminaPolished/HG00733.h1.contigs.fasta",
+													"JF": "/home/cmb-16/mjc/hgsvg/datasets/HG00733/Illumina/mer_counts.q0.L4.jf",
+												 "ILL" : ["/home/cmb-16/mjc/hgsvg/datasets/HG00733/Illumina/ERR903031_1.fastq.gz",
+																	"/home/cmb-16/mjc/hgsvg/datasets/HG00733/Illumina/ERR903031_2.fastq.gz"]
+                    },
+				"NA19240-h0" : { "VCF": "/home/cmb-16/mjc/mchaisso/projects/SVGenotyping/alignments/NA19240.h0.contigs.fasta.vcf",
+												 "PB": "/home/cmb-16/mjc/projects/hgsvg/alignments/NA19240/NA19240.PB.bam",
+												 "ASM" : "/home/cmb-16/mjc/mchaisso/projects/IlluminaPolished/NA19240.h0.contigs.fasta",
+													"JF": "/home/cmb-16/mjc/hgsvg/datasets/NA19240/Illumina/mer_counts.q0.L4.jf",
+												 "ILL" : ["/home/cmb-16/mjc/hgsvg/datasets/NA19240/Illumina/ERR894724_1.fastq.gz",
+																	"/home/cmb-16/mjc/hgsvg/datasets/NA19240/Illumina/ERR894724_2.fastq.gz"]
+											 },
+				"NA19240-h1" : { "VCF": "/home/cmb-16/mjc/mchaisso/projects/SVGenotyping/alignments/NA19240.h1.contigs.fasta.vcf",
+												 "PB": "/home/cmb-16/mjc/projects/hgsvg/alignments/NA19240/NA19240.PB.bam",
+												 "ASM" : "/home/cmb-16/mjc/mchaisso/projects/IlluminaPolished/NA19240.h1.contigs.fasta",
+													"JF": "/home/cmb-16/mjc/hgsvg/datasets/NA19240/Illumina/mer_counts.q0.L4.jf",
+												 "ILL" : ["/home/cmb-16/mjc/hgsvg/datasets/NA19240/Illumina/ERR894724_1.fastq.gz",
+																	"/home/cmb-16/mjc/hgsvg/datasets/NA19240/Illumina/ERR894724_2.fastq.gz"]
+                    }
+		},
+		"grid_small" : "sbatch --ntasks=1 --mem=1000 --time=0:30:00 --partition=cmb",
+		"grid_large" : "sbatch --ntasks=1 --mem=32000 --time=0:30:00 --partition=cmb",
+		"grid_quad" : "sbatch --ntasks=4 --mem=16000 --time=4:00:00 --partition=cmb",
+		"grid_manycore" : "sbatch --ntasks=8 --mem=24000 --time=24:00:00 --partition=cmb",
+    "jf_dir" : "/home/cmb-16/mjc/sample-datasets/SimonsDiversityPanel/GlobalPopulations/Jellyfish",
+    "genotype_acc" : "/home/cmb-16/mjc/mchaisso/projects/SVGenotyping/acc_list.txt"
+}
+													 
