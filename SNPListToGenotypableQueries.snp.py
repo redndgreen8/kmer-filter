@@ -69,15 +69,18 @@ for line in snpVCF:
       #for i in  range(altLen):
 
         alt=pre+vals[4]+suf
+        
 
         alt=alt.upper()
         alt=alt.replace("N", "A")
 
         #print( str(len(pre)) +" "+str(len(suf)) + " "+ pre +" " + vals[4] + " " + suf +" " +str(len(gen)) + " " +gen[0:21]+" "+gen[21]+" "+gen[22:] +" "+ vals[3]+" refFrominput:"+ ref.fetch(chrom,pos,pos+1 )  )
+        assert (len(gen)-((2*args.kmer)-1)) ==0, "ref seq doesnt match kmer seq size"
+        assert (len(alt)- ((2*args.kmer)-1)) ==0, "alt seq doesnt match kmer seq size"
 
-        queries.write(">" + chrom + "/" + str(qpos+1) + "/ref/" +gen[args.kmer-1]+"/"+str(Index) + "\n")
+        queries.write(">" + chrom + "/" + str(qpos+1) + "/ref/" +gen[args.kmer-1]+"/"+str(Index) +"/"+str(vals[5])+ "\n")
         queries.write(gen + "\n")
-        queries.write(">" + chrom + "/" + str(qpos+1) + "/alt/" +vals[4]+"/"+str(Index) + "\n")
+        queries.write(">" + chrom + "/" + str(qpos+1) + "/alt/" +vals[4]+"/"+str(Index) + "/"+str(vals[5])+ "\n")
         queries.write(alt + "\n")
       
 
@@ -85,7 +88,8 @@ for line in snpVCF:
         new_vals[3] = gen
         new_vals[4] = alt
         correctedSeq_lines.append('\t'.join(new_vals))
-        
+queries.close()
+
 vcf_path = args.snp
 #print('\n'.join(correctedSeq_lines))
 with open(vcf_path+'.correctedseq','w') as f:

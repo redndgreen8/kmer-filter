@@ -114,7 +114,7 @@ for line in nucfreq:
             continue
             
 
-    total=counts[0][0]+counts[1][0]+counts[2][0]+counts[3][0]+nDel
+    total=counts[0][0]+counts[1][0]+counts[2][0]+counts[3][0]#+nDel
     altMult=0
     refMult=0
     refSeq=curChrom[pos-args.k+1:pos+args.k].upper()

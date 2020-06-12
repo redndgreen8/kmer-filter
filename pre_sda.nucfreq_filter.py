@@ -20,16 +20,42 @@ ap.add_argument("--median", "-med", type=int, required=True)
 
 ap.add_argument("--mean_cov", "-m", type=int, required=True)
 
+ap.add_argument("--region", "-r",description="list of regions chr:s-e",required=True)
+
+ap.add_argument("--prefout", help="prefix root folder")
+
 
 #ap.add_argument("--lockfile", help="Make IO wait on the existence of this file", default=None)
 ap.add_argument("--output", help="File to write to", default="filtered.orig_counts.nucfreq")
 
 args = ap.parse_args()
 
+
+
+reg=open(args.region)
+for r in reg:
+    regi=reg.split("_")[0]
+    
+cont=regi.split(":")
+contig= cont[0]
+start=int(cont[1].split("-")[0])
+stop=int(cont[1].split("-")[1])
+print(contig,start,stop)
+
+outfile="/panfs/qcb-panasas/rdagnew/HG00514/clr.pbmm/" + args.region + "/kmer_filter/DUP_call."+args.region+".queries.counts"
+
+
+
+
+
 filtered=args.output
 
 with open(filtered,'w') as filt:
     for line in sys.stdin:
+        if line[0] == '#':
+            continue
+
+
         vals=line.split()
         info=vals[16].split(";")
         #print(info)
